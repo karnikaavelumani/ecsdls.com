@@ -19,8 +19,6 @@
 	--size-sm: clamp(1rem, 0.9795rem + 0.0909vw, 1.125rem);
 }
 
-*,
-html,
 body {
 	margin: 0;
 	color: var(--color);
