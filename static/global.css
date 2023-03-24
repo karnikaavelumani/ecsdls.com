@@ -14,9 +14,17 @@
 	--color: var(--color-light);
 	--background: var(--background-light);
 
-	--size-lg: clamp(1.5rem, 1.3773rem + 0.5455vw, 2.25rem);
-	--size-md: clamp(1.125rem, 1.0636rem + 0.2727vw, 1.5rem);
-	--size-sm: clamp(1rem, 0.9795rem + 0.0909vw, 1.125rem);
+	/* These sizes are relative to the users preferred font size. */
+	--size-xxl: 5.3125rem;
+	--size-xl: 3.5rem;
+	--size-lg: 2.25rem;
+	--size-md: 1.5rem;
+	--size-sm: 1.125rem;
+	--size-xs: 0.875rem;
+}
+
+html {
+	font-size: 100%;
 }
 
 body {

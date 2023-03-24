@@ -1,32 +1,30 @@
 <section class="core-activities-section">
+	<h2 id="core-activities">Our core activities</h2>
 	<div class="core-activities-container">
-		<h2 id="core-activities">Our core activities</h2>
-		<div class="core-activity-container">
-			<div class="core-activity-content">
-				<h3 id="keynote-speakers">Keynote speakers</h3>
-				<p>
-					Our keynote speakers offer unique insights and perspectives focused on the event's theme,
-					leaving a lasting impact on attendees and empowering them to lead and effect change in
-					their communities.
-				</p>
-			</div>
-			<div class="core-activity-illustration">
-				<img src="/assets/speaker.svg" alt="Frog speaker" />
-			</div>
+		<div class="core-activity-content">
+			<h3 id="keynote-speakers">Keynote speakers</h3>
+			<p>
+				Our keynote speakers offer unique insights and perspectives focused on the event's theme,
+				leaving a lasting impact on attendees and empowering them to lead and effect change in their
+				communities.
+			</p>
 		</div>
 
-		<div class="core-activity-container">
-			<div class="core-activity-content">
-				<h3 id="panelists">Panelists</h3>
-				<p>
-					Our industry experts will answer your questions, draw on their experience to guide you,
-					and provide valuable advice to help you succeed. Join us to learn, engage, and network
-					with peers and professionals!
-				</p>
-			</div>
-			<div class="core-activity-illustration">
-				<img src="/assets/panelist.svg" alt="Animal panelists" />
-			</div>
+		<div class="core-activity-content photo">
+			<img src="/assets/speaker.svg" alt="Frog speaker" />
+		</div>
+
+		<div class="core-activity-content">
+			<h3 id="panelists">Panelists</h3>
+			<p>
+				Our industry experts will answer your questions, draw on their experience to guide you, and
+				provide valuable advice to help you succeed. Join us to learn, engage, and network with
+				peers and professionals!
+			</p>
+		</div>
+
+		<div class="core-activity-content photo">
+			<img src="/assets/panelist.svg" alt="Animal panelists" />
 		</div>
 	</div>
 </section>
@@ -44,50 +42,55 @@
 		align-items: center;
 	}
 
-	.core-activities-container {
-		display: flex;
-		flex-direction: column;
-		gap: 42px;
-		width: min(80vw, 50ch);
-	}
-
-	.core-activities-container h2 {
+	.core-activities-section h2 {
 		text-align: center;
 	}
 
-	.core-activity-container {
-		display: flex;
-		flex-direction: column;
-		gap: 42px;
+	.core-activities-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(n, auto);
+		grid-gap: 20px;
+		width: min(80vw, 70ch);
 	}
 
 	.core-activity-content {
+		display: flex;
+		flex-direction: column;
 		text-align: center;
 	}
 
-	.core-activity-illustration {
-		text-align: center;
+	.photo {
+		width: max-content;
+		height: max-content;
 	}
 
-	.core-activity-illustration img {
-		width: 175px;
+	/* .core-activity-illustration {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	} */
+
+	.core-activity-content img {
+		align-self: center;
+		justify-self: center;
+		width: 200px;
 	}
 
 	h2 {
-		font-size: xxx-large;
+		font-size: var(--size-xl);
 	}
+
 	h3 {
-		font-size: x-large;
+		font-size: var(--size-lg);
+		margin: 0;
+	}
+
+	p {
+		font-size: large;
 	}
 
 	@media screen and (min-width: 768px) {
-		.core-activity-container {
-			flex-direction: row;
-			width: min(80vw, 50ch);
-		}
-
-		.core-activity-container:nth-child(odd) {
-			flex-direction: row-reverse;
-		}
 	}
 </style>
