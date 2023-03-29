@@ -116,23 +116,43 @@
 		}
 
 		.core-activity-content:nth-child(1) {
-			grid-column: 2;
+			grid-column: 1;
 			grid-row: 1;
 		}
 
 		.core-activity-content:nth-child(2) {
-			grid-column: 1;
+			grid-column: 2;
 			grid-row: 1;
 		}
 
 		.core-activity-content:nth-child(3) {
 			grid-column: 2;
-			grid-row: 3;
+			grid-row: 2;
 		}
 
 		.core-activity-content:nth-child(4) {
-			grid-column: 2;
+			grid-column: 1;
 			grid-row: 2;
+		}
+
+		.core-activity-content:nth-child(5) {
+			grid-column: 1;
+			grid-row: 3;
+		}
+
+		.core-activity-content:nth-child(6) {
+			grid-column: 2;
+			grid-row: 3;
+		}
+
+		.core-activity-content:nth-child(7) {
+			grid-column: 2;
+			grid-row: 4;
+		}
+
+		.core-activity-content:nth-child(8) {
+			grid-column: 1;
+			grid-row: 4;
 		}
 
 		.photo img {
