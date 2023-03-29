@@ -9,7 +9,6 @@
 				communities.
 			</p>
 		</div>
-
 		<div class="core-activity-content photo">
 			<img src="/assets/speaker.svg" alt="Frog speaker" />
 		</div>
@@ -22,9 +21,31 @@
 				peers and professionals!
 			</p>
 		</div>
-
 		<div class="core-activity-content photo">
 			<img src="/assets/panelist.svg" alt="Animal panelists" />
+		</div>
+
+		<div class="core-activity-content">
+			<h3 id="workshops">Workshops</h3>
+			<p>
+				Collaborate with student leaders in group activities, leverage your skills and experience,
+				tackle group tasks, and develop valuable teamwork skills for your future.
+			</p>
+		</div>
+		<div class="core-activity-content photo">
+			<img src="/assets/workshops.svg" alt="Paper and tools" />
+		</div>
+
+		<div class="core-activity-content">
+			<h3 id="mentoring">Speed mentoring</h3>
+			<p>
+				Engage in 2-on-1 with professionals and peers to ask questions, gain insights, expand
+				knowledge, and improve leadership skills. Get a chance to expand your knowledge, build your
+				network, and take your leadership skills to the next level.
+			</p>
+		</div>
+		<div class="core-activity-content photo">
+			<img src="/assets/mentoring.svg" alt="Animals talking 1 on 1" />
 		</div>
 	</div>
 </section>
@@ -37,8 +58,8 @@
   - https://www.figma.com/file/XThxubY4v3KuDMrU6QOuwO/ecsdls.com?node-id=14-114&t=ABDxmZ8B6AdW2SFY-0 -->
 <style>
 	.core-activities-section {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		justify-content: center;
 		align-items: center;
 	}
 
@@ -48,31 +69,21 @@
 
 	.core-activities-container {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: repeat(n, auto);
-		grid-gap: 20px;
-		width: min(80vw, 70ch);
+		/* display: flex;
+		flex-direction: column; */
+		text-align: center;
+		gap: 16px;
+		width: 100%;
 	}
 
 	.core-activity-content {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		/* display: flex;
+		flex-direction: column; */
 		text-align: center;
 	}
 
-	.photo {
-		width: max-content;
-		height: max-content;
-	}
-
-	/* .core-activity-illustration {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-	} */
-
-	.core-activity-content img {
+	.photo img {
 		align-self: center;
 		justify-self: center;
 		width: 200px;
@@ -80,17 +91,52 @@
 
 	h2 {
 		font-size: var(--size-xl);
+		font-weight: 600;
 	}
 
 	h3 {
 		font-size: var(--size-lg);
+		font-weight: 500;
 		margin: 0;
 	}
 
 	p {
-		font-size: large;
+		font-size: var(--size-sm);
 	}
 
 	@media screen and (min-width: 768px) {
+		.core-activities-container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: center;
+			justify-items: center;
+			grid-gap: 30px;
+			width: min(90vw, 80ch);
+			margin-bottom: 2em;
+		}
+
+		.core-activity-content:nth-child(1) {
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		.core-activity-content:nth-child(2) {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.core-activity-content:nth-child(3) {
+			grid-column: 2;
+			grid-row: 3;
+		}
+
+		.core-activity-content:nth-child(4) {
+			grid-column: 2;
+			grid-row: 2;
+		}
+
+		.photo img {
+			width: 90%;
+		}
 	}
 </style>
