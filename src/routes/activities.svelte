@@ -50,11 +50,7 @@
 	</div>
 </section>
 
-<!-- TODO:
-  - [ ] Swap content with illustration for odd rows.
-  - [ ] Center all the text!
-  
-  Reference:
+<!-- Reference:
   - https://www.figma.com/file/XThxubY4v3KuDMrU6QOuwO/ecsdls.com?node-id=14-114&t=ABDxmZ8B6AdW2SFY-0 -->
 <style>
 	.core-activities-section {
@@ -69,8 +65,6 @@
 
 	.core-activities-container {
 		display: grid;
-		/* display: flex;
-		flex-direction: column; */
 		text-align: center;
 		gap: 16px;
 		width: 100%;
@@ -78,24 +72,24 @@
 
 	.core-activity-content {
 		display: grid;
-		/* display: flex;
-		flex-direction: column; */
 		text-align: center;
+		margin: 0 1em 0;
 	}
 
 	.photo img {
 		align-self: center;
 		justify-self: center;
 		width: 200px;
+		padding-bottom: 2em;
 	}
 
 	h2 {
-		font-size: var(--size-xl);
+		font-size: var(--size-lg);
 		font-weight: 600;
 	}
 
 	h3 {
-		font-size: var(--size-lg);
+		font-size: var(--size-md);
 		font-weight: 500;
 		margin: 0;
 	}
