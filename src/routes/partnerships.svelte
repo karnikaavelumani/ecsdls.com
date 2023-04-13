@@ -1,41 +1,69 @@
+<script lang="ts">
+	interface Partnership {
+		name: string;
+		image: string;
+		darkImage?: string;
+		link: string;
+	}
+
+	const partnerships: Partnership[] = [
+		{
+			name: 'Raytheon Technologies',
+			image: '/assets/raytheon.svg',
+			link: 'https://www.rtx.com/'
+		},
+		{
+			name: 'CSUF Engineering and Computer Science',
+			image: '/assets/csufecs.png',
+			link: 'http://www.fullerton.edu/ecs/'
+		},
+		{
+			name: 'Southern California Edison International',
+			image: '/assets/edison.svg',
+			link: 'https://www.sce.com/'
+		},
+		{
+			name: 'Hyundai',
+			image: '/assets/hyundai.svg',
+			link: 'https://www.hyundaiusa.com/us/en'
+		},
+		{
+			name: 'Chevron',
+			image: '/assets/chevron.svg',
+			link: 'https://www.chevron.com/'
+		},
+		{
+			name: 'Blizzard Entertainment',
+			image: '/assets/blizzard-light.svg',
+			darkImage: '/assets/blizzard-dark.svg',
+			link: 'https://www.blizzard.com/en-us/'
+		}
+	];
+</script>
+
 <section class="partnerships-section">
-	<h2 id="partnerships">Our partnerships</h2>
+	<h2 id="partnerships-title">Our partnerships</h2>
 	<div class="partnerships-container">
-		<div class="partnerships-logo">
-			<a href="https://www.rtx.com/">
-				<img src="/assets/raytheon.svg" alt="Raytheon Technologies Logo" />
-			</a>
-		</div>
-
-		<div class="partnerships-logo">
-			<a href="http://www.fullerton.edu/ecs/">
-				<img src="/assets/csufecs.png" alt="CSUF Engineering and Computer Science Logo" />
-			</a>
-		</div>
-
-		<div class="partnerships-logo">
-			<a href="https://www.sce.com/">
-				<img src="/assets/edison.svg" alt="Southern California Edison International Logo" />
-			</a>
-		</div>
-
-		<div class="partnerships-logo">
-			<a href="https://www.hyundaiusa.com/us/en">
-				<img src="/assets/hyundai.svg" alt="Hyundai Logo" />
-			</a>
-		</div>
-
-		<div class="partnerships-logo">
-			<a href="https://www.chevron.com/">
-				<img src="/assets/chevron.svg" alt="Chevron Logo" />
-			</a>
-		</div>
-
-		<div class="partnerships-logo">
-			<a href="https://www.blizzard.com/en-us/">
-				<img src="/assets/blizzard.svg" alt="Blizzard Entertainment Logo" />
-			</a>
-		</div>
+		{#each partnerships as partnership}
+			<div class="partnerships-logo">
+				<a href={partnership.link}>
+					<!-- <img
+						src={isDarkMode && partnership.darkImage ? partnership.darkImage : partnership.image}
+						alt={partnership.name + ' Logo'}
+					/> -->
+					<picture>
+						{#if partnership.darkImage}
+							<!-- Image for light mode -->
+							<source srcset={partnership.image} media="(prefers-color-scheme: light)" />
+							<!-- Image for dark mode -->
+							<source srcset={partnership.darkImage} media="(prefers-color-scheme: dark)" />
+						{/if}
+						<!-- Fallback image for browsers that don't support the picture element -->
+						<img src={partnership.image} alt={partnership.name + ' Logo'} />
+					</picture>
+				</a>
+			</div>
+		{/each}
 	</div>
 </section>
 
@@ -53,14 +81,9 @@
 	.partnerships-container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-gap: 30px;
-		margin: 0 2em 2em;
-		/* align-items: center;
-		justify-items: center;
-		text-align: center;
-		grid-gap: 60px;
-		width: 80%;
-		margin: 2em; */
+		grid-gap: 50px;
+		margin: 0 2em 5em;
+		align-items: center;
 	}
 
 	h2 {
@@ -70,19 +93,19 @@
 
 	img {
 		width: 100%;
+		max-height: 100px;
 	}
 
 	@media screen and (min-width: 768px) {
 		.partnerships-container {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
-			grid-gap: 60px;
+			grid-gap: 80px;
 			margin: 2em;
 		}
 
 		img {
 			width: 275px;
-			max-height: fit-content;
 		}
 	}
 </style>
